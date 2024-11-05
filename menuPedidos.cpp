@@ -89,7 +89,6 @@ void asociarCliente(NodoCliente*& clientes, int clienteId, InfoPedido pedido){
 
 void crearPedido(NodoPedido*& pedidosFte, NodoPedido*& pedidosFin, NodoPedido* pedidosTerminados, NodoCliente*& clientes, NodoProducto*& productos){
 	NodoPedido* pedido = new NodoPedido(); /////////////////////////////////////////VER DESDE ACA
-	cout << "Creando nuevo pedido con ID: " << pedido->info.id << endl;
 		
 	NodoItem* item = new NodoItem();
 	NodoProducto* producto;
@@ -127,7 +126,6 @@ void crearPedido(NodoPedido*& pedidosFte, NodoPedido*& pedidosFin, NodoPedido* p
 		
 		pedido->info.totalPedido+=item->info.totalItem;
 		
-		cout << "Agregando item con ID de producto:" << item->info.idProducto << endl;
 		
 		msg("Desea agregar otro item? S/N: ");		
 		cin>>opt;
@@ -138,7 +136,6 @@ void crearPedido(NodoPedido*& pedidosFte, NodoPedido*& pedidosFin, NodoPedido* p
 	asociarCliente(clientes, pedido->info.idCliente, pedido->info);	
 	
 	encolar(pedidosFte, pedidosFin, pedido->info);
-	cout << "Pedido Encolado: " << pedido->info.id << endl;
 	
 	checkStock(productos, producto->info.id);
 	

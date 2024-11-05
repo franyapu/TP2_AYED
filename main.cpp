@@ -101,7 +101,7 @@ int main(int argc, char** argv) {
 		
 		regProducto=productos->info;
 	
-		cout<<regProducto.nombre<<" "<<endl;
+	
 	
 		fwrite(&regProducto, sizeof(InfoProducto), 1, productosFile);
 		
@@ -120,7 +120,7 @@ int main(int argc, char** argv) {
 		
 		regCliente=clientes->info;
 	
-		cout<<regCliente.nombre<<" "<<endl;
+	
 	
 		fwrite(&regCliente, sizeof(InfoCliente), 1, clientesFile);
 		
@@ -136,8 +136,7 @@ int main(int argc, char** argv) {
 		
 		regProveedores=proveedores->info;
 	
-		cout<<regProveedores.nombre<<" "<<endl;
-	
+		
 		fwrite(&regProveedores, sizeof(InfoProveedor), 1, proveedoresFile);
 		
 		eliminarPrimerNodoP(proveedores);	
